@@ -12,29 +12,28 @@ export const Item = ({ item, delProd, addCartProd }) => {
     delProd(item.id);
   };
   return (
-    <li>
+    <li className="plus">
       {name}
+      <span>
       {
         isCartItem ? (
           <div>
              <span>
           {Math.abs(nos)}
-        </span>
-        <span>
+        {/* </span>
+        <span> */}
           {prefix}
           {Math.abs(price)}
         </span>
           </div>
         ) : (
-          <p></p>
+            <Button onClick = {() => addtoCart(item)}>Cart</Button>
         )
       }
+      </span>
       <button onClick={() => delProd(item.id)} className="delete-btn">
         x
       </button>
-      {
-        isCartItem ? (<p></p>) : (<Button onClick = {() => addtoCart(item)}>Cart</Button>)
-      }
     </li>
   );
 };
