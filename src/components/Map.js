@@ -121,16 +121,19 @@ class Map extends React.Component {
         <canvas
           ref="canvas"
           width={window.innerWidth}
-          height={window.innerHeight}
+          height={window.innerHeight + 150}
           style={{
             // border: '2px solid #000',
-            marginTop: 10,
+            // marginTop: 10,
+            // marginBottom: 20,
+            maxWidth: 1000,
+            // maxHeight: 1000,
           }}
           onClick={(e) => {
             alert(e.clientX + "," + e.clientY);
           }}
         />
-        <img ref="image" src={matchPath.jpg} className="hidden" />
+        {/* <img ref="image" src={matchPath.jpg} className="hidden" /> */}
       </div>
     );
   }
