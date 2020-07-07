@@ -29,6 +29,8 @@ class Map extends React.Component {
     };
   }
   componentDidMount() {
+    // console.log(graph);
+    // console.log("hello");
     // db.ref('/users').on('value', querySnapShot => {
     //     let data = querySnapShot.val() ? querySnapShot.val() : {};
     //     let todoItems = data;
@@ -221,7 +223,6 @@ class Map extends React.Component {
       mouseY = graph[key][1];
       this.update(ctx, mouseX, mouseY);
     }
-    // setthegraph(graph);
   }
   deleteArc() {
     this.state.ctx.beginPath();

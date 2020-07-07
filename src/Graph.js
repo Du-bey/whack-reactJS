@@ -17,7 +17,7 @@ class Graph extends React.Component {
   }
   componentDidMount() {
     var shelf_list = {};
-    // var graph = {};
+    var graph = {};
     var nodes = {};
     shelf_list[1] = [297, 322];
     shelf_list[2] = [398, 322];
@@ -289,6 +289,8 @@ class Graph extends React.Component {
     var shortestPathInfo = this.shortestPath(e, 60, 1);
     var path1to6 = this.constructPath(shortestPathInfo, 51);
     console.log(path1to6);
+    // console.log("hello");
+    // console.log(graph);
   }
   dist_bet_nodes(x, y) {
     // return Math.sqrt((((Math.abs(x[0]-y[0])*(Math.abs(x[1]-y[1])) + (Math.abs(x[1]-y[1])*(Math.abs(x[1]-y[1])))))));
@@ -343,6 +345,7 @@ class Graph extends React.Component {
   render() {
     return <div></div>;
   }
+  
 }
 
 export default Graph;
