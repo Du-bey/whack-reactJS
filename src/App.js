@@ -11,6 +11,7 @@ import { Grid } from "@material-ui/core";
 import AppBarImpl from "./components/AppBarImpl";
 import ProductGrid from "./components/ProductGrid";
 import ShopLocSelector from "./components/ShopLocSelector";
+import CsvReader from "./components/csvReader";
 
 // for app bar
 const useStyles = makeStyles((theme) => ({
@@ -111,6 +112,9 @@ function App() {
       </div>
       <div className="productGridControlDiv">
         <ProductGrid />
+      </div>
+      <div>
+        <CsvReader />
       </div>
     </div>
   );
