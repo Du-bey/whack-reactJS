@@ -1,22 +1,40 @@
 import React from "react";
-
-export const Item = ({ item, delProd }) => {
-  const amount = item.amount;
+import { Button } from "@material-ui/core";
+export const Item = ({ item, delProd, addCartProd }) => {
   const name = item.name;
+  const nos = item.amount;
+  const price = item.price;
   const prefix = "Rs.";
-  const deleteItem = (id) => {
-    delProd(id);
+  const isCartItem = item.isCartItem;
+  const addtoCart = (item) => {
+    item.isCartItem = true;
+    addCartProd(item);
+    delProd(item.id);
   };
   return (
-    <li className="plus">
+    <li>
       {name}
-      <span>
-        {prefix}
-        {Math.abs(amount)}
-      </span>
+      {
+        isCartItem ? (
+          <div>
+             <span>
+          {Math.abs(nos)}
+        </span>
+        <span>
+          {prefix}
+          {Math.abs(price)}
+        </span>
+          </div>
+        ) : (
+          <p></p>
+        )
+      }
       <button onClick={() => delProd(item.id)} className="delete-btn">
         x
       </button>
+      {
+        isCartItem ? (<p></p>) : (<Button onClick = {() => addtoCart(item)}>Cart</Button>)
+      }
     </li>
   );
 };

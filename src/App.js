@@ -5,7 +5,7 @@ import "./images/mcph.jpg";
 import Map from "./components/Map";
 import { AddItem } from "./components/AddItem";
 import { ItemList } from "./components/ItemList";
-import { Item } from "./components/Item";
+import { Cart } from "./components/Cart";
 import { GlobalStateProvider } from "./contexts/GlobalState.js";
 import { Grid } from "@material-ui/core";
 import AppBarImpl from "./components/AppBarImpl";
@@ -95,6 +95,7 @@ function App() {
             <GlobalStateProvider>
               <AddItem />
               <ItemList />
+              <Cart />
             </GlobalStateProvider>
           </Grid>
         </Grid>

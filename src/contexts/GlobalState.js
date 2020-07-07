@@ -24,16 +24,23 @@ export const GlobalState = createContext();
 
 export const GlobalStateProvider = (props) => {
   const [prods, setProds] = useState([]);
+  const [cartProds, setcartProds] = useState([]);
   const addProd = (prod) => {
     setProds([...prods, prod]);
+  };
+  const addCartProd = (prod) => {
+    setcartProds([...cartProds, prod]);
   };
   const delProd = (id) => {
     setProds([...prods.filter((prods) => prods.id !== id)]);
   };
+  const delCartProd = (id) => {
+    setcartProds([...cartProds.filter((prods) => prods.id !== id)]);
+  };
 
   return (
     <GlobalState.Provider
-      value={{ prods: prods, addProd: addProd, delProd: delProd }}
+      value={{ prods: prods, addProd: addProd, delProd: delProd, cartProds: cartProds, addCartProd: addCartProd, delCartProd: delCartProd }}
     >
       {props.children}
     </GlobalState.Provider>

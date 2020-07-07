@@ -18,7 +18,6 @@ import {
 import uuid from "uuid/v1";
 
 export const AddItem = () => {
-  const [amount, setAmount] = useState(0);
   const [name, setName] = useState("");
   const { addProd } = useContext(GlobalState);
 
@@ -28,9 +27,8 @@ export const AddItem = () => {
     const newProd = {
       id: uuid(),
       name,
-      amount: parseInt(amount),
+      isCartItem:false
     };
-    setAmount(0);
     setName("");
     addProd(newProd);
     console.log(newProd);
@@ -43,16 +41,6 @@ export const AddItem = () => {
           label="Item you want to buy"
           variant="filled"
           onChange={(e) => setName(e.target.value)}
-        />
-        <TextField
-          id="filled"
-          label="Amount"
-          type="number"
-          variant="filled"
-          InputLabelProps={{
-            shrink: true,
-          }}
-          onChange={(e) => setAmount(e.target.value)}
         />
         <Button
           type="submit"
