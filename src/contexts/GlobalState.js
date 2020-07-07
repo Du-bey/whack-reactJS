@@ -25,17 +25,20 @@ export const GlobalState = createContext();
 export const GlobalStateProvider = (props) => {
   const [prods, setProds] = useState([]);
   const [cartProds, setcartProds] = useState([]);
+  const [billamount,setbillamount]=useState(0);
   const addProd = (prod) => {
     setProds([...prods, prod]);
   };
   const addCartProd = (prod) => {
     setcartProds([...cartProds, prod]);
+    // setbillamount( billamount + prod.amount * prod.price );  
   };
   const delProd = (id) => {
     setProds([...prods.filter((prods) => prods.id !== id)]);
   };
   const delCartProd = (id) => {
     setcartProds([...cartProds.filter((prods) => prods.id !== id)]);
+    // setbillamount( billamount - prod.amount * prod.price );
   };
 
   return (
