@@ -77,12 +77,7 @@ function App() {
           alignItems="flex-start"
         >
           <Grid item xs={10}>
-            <Grid
-              container
-              direction="colomn"
-              justify="space-around"
-              alignItems="flex-start"
-            >
+            <Grid container justify="space-around" alignItems="flex-start">
               <Grid item xs={5}>
                 <ShopLocSelector />
               </Grid>
@@ -93,9 +88,23 @@ function App() {
           </Grid>
           <Grid item xs={2}>
             <GlobalStateProvider>
-              <AddItem />
-              <ItemList />
-              <Cart />
+              <Grid
+                container
+                direction="column"
+                justify="space-between"
+                alignItems="center"
+                style={{ minHeight: 750 }}
+              >
+                <Grid item xs={12}>
+                  <AddItem />
+                </Grid>
+                <Grid item xs={12}>
+                  <ItemList />
+                </Grid>
+                <Grid item xs={12}>
+                  <Cart />
+                </Grid>
+              </Grid>
             </GlobalStateProvider>
           </Grid>
         </Grid>
