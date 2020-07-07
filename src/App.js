@@ -88,6 +88,9 @@ function App() {
           </Grid>
           <Grid item xs={2}>
             <GlobalStateProvider>
+            <Grid item xs={12}>
+                  <AddItem />
+                </Grid>
               <Grid
                 container
                 direction="column"
@@ -95,9 +98,6 @@ function App() {
                 alignItems="center"
                 style={{ minHeight: 750 }}
               >
-                <Grid item xs={12}>
-                  <AddItem />
-                </Grid>
                 <Grid item xs={12}>
                   <ItemList />
                 </Grid>
