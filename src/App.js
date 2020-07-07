@@ -30,15 +30,11 @@ const useStyles = makeStyles((theme) => ({
     padding: 10,
   },
   bigDaddy: {
-    minHeight: 1000,
     textAlign: "center",
     marginTop: 50,
-    overflow: "scroll",
+    overflow: "hidden",
+    marginBottom: 50,
   },
-  // map: {
-  //   maxHeight: 750,
-  //   maxWidth: 500,
-  // },
   productGrid: {
     paddingBottom: 20,
     paddingTop: 20,
@@ -84,7 +80,7 @@ function App() {
             <Grid
               container
               direction="colomn"
-              justify="space-evenly"
+              justify="space-around"
               alignItems="flex-start"
             >
               <Grid item xs={5}>
