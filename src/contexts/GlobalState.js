@@ -41,9 +41,13 @@ export const GlobalStateProvider = (props) => {
     // setbillamount( billamount - prod.amount * prod.price );
   };
 
+  const [graph, setGraph] = useState({});
+  const setthegraph = (newg) => {
+    setGraph(newg)
+  }
   return (
     <GlobalState.Provider
-      value={{ prods: prods, addProd: addProd, delProd: delProd, cartProds: cartProds, addCartProd: addCartProd, delCartProd: delCartProd }}
+      value={{ prods: prods, addProd: addProd, delProd: delProd, cartProds: cartProds, addCartProd: addCartProd, delCartProd: delCartProd, graph : graph, setthegraph : setthegraph }}
     >
       {props.children}
     </GlobalState.Provider>

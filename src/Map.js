@@ -1,8 +1,12 @@
 import * as React from "react";
+import { useState, useContext, Component } from "react";
 import { matchPath } from "react-router";
 import { db } from "./config";
 import firestore from "firebase";
 import "./Graph.js";
+import {graph} from "./globvar.js" 
+// import GlobalState from "./contexts/GlobalState";
+// const { graph, setthegraph } = useContext(GlobalState);
 const list = [];
 const dict1 = {};
 const list2 = [];
@@ -149,7 +153,7 @@ class Map extends React.Component {
     this.setState({
       ctx: ctx,
     });
-    var graph = {};
+    // var graph = {};
     graph[1] = [297, 322];
     graph[2] = [398, 322];
     graph[3] = [497, 321];
@@ -217,6 +221,7 @@ class Map extends React.Component {
       mouseY = graph[key][1];
       this.update(ctx, mouseX, mouseY);
     }
+    // setthegraph(graph);
   }
   deleteArc() {
     this.state.ctx.beginPath();
