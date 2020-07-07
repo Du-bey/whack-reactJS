@@ -8,7 +8,12 @@ export const ItemList = () => {
     <div>
       <ul className="list">
         {prods.map((item) => (
-          <Item key={item.id} item={item} delProd={delProd} addCartProd={addCartProd} />
+          <Item
+            key={item.id}
+            item={item}
+            delProd={delProd}
+            addCartProd={addCartProd}
+          />
         ))}
       </ul>
     </div>

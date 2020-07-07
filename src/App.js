@@ -2,7 +2,7 @@ import React from "react";
 import "./App.css";
 import { makeStyles } from "@material-ui/core/styles";
 import "./images/mcph.jpg";
-import Map from "./components/Map";
+import Map from "./Map";
 import { AddItem } from "./components/AddItem";
 import { ItemList } from "./components/ItemList";
 import { Cart } from "./components/Cart";
@@ -73,7 +73,7 @@ function App() {
           className={classes.container}
           container
           direction="row"
-          justify="center"
+          justify="flex-start"
           alignItems="flex-start"
         >
           <Grid item xs={10}>
@@ -88,9 +88,9 @@ function App() {
           </Grid>
           <Grid item xs={2}>
             <GlobalStateProvider>
-            <Grid item xs={12}>
-                  <AddItem />
-                </Grid>
+              <Grid item xs={12}>
+                <AddItem />
+              </Grid>
               <Grid
                 container
                 direction="column"
