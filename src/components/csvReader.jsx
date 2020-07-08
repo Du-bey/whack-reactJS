@@ -62,6 +62,7 @@ class CsvReader extends Component {
 
   componentWillMount() {
     this.getCsvData();
+    console.log(this.state.data)
   }
 
   fetchCsv() {
