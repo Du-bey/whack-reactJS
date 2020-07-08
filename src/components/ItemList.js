@@ -14,6 +14,7 @@ export const ItemList = () => {
             delProd={delProd}
             addCartProd={addCartProd}
           />
+          // console.log(item)
         ))}
       </ul>
     </div>

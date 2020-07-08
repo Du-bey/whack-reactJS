@@ -12,6 +12,7 @@ import AppBarImpl from "./components/AppBarImpl";
 import ProductGrid from "./components/ProductGrid";
 import ShopLocSelector from "./components/ShopLocSelector";
 import CsvReader from "./components/csvReader";
+import Totalbill from "./components/Totalbill";
 
 // for app bar
 const useStyles = makeStyles((theme) => ({
@@ -103,16 +104,22 @@ function App() {
                   <ItemList />
                 </Grid>
                 <Grid item xs={12}>
+                  <h2>Cart</h2>
+                </Grid>
+                <Grid item xs={12}>
                   <Cart />
                 </Grid>
+              <Totalbill />
               </Grid>
             </GlobalStateProvider>
           </Grid>
         </Grid>
       </div>
+      <GlobalStateProvider>
       <div className="productGridControlDiv">
         <ProductGrid />
       </div>
+      </GlobalStateProvider>
       <div>
         <CsvReader />
       </div>

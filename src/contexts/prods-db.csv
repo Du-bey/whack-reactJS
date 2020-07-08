@@ -1,0 +1,49 @@
+Id,Product,Loc,Stock,Price
+1,UHT-milk,0,10,5
+2,whole milk,0,10,6
+3,condensed milk,0,10,7
+4,butter milk,0,10,8
+5,cream cheese,1,10,9
+6,soft cheese,1,10,10
+7,hard cheese,1,10,5
+8,butter,1,10,6
+9,yogurt,2,10,7
+10,chicken,2,10,8
+11,ham,2,10,9
+12,beef,2,10,10
+13,meat,3,10,6
+14,brown bread,3,10,7
+15,semi-finished bread,3,10,8
+16,mayonnaise,3,10,9
+17,frozen meals,4,10,10
+18,canned fish,4,10,11
+19,frankfurter,4,10,6
+20,fruit/vegetable juice,4,10,6
+21,pastry,5,10,7
+22,rolls/buns,5,10,8
+23,cake bar,5,10,9
+24,chocolate,5,10,10
+25,candy,6,10,11
+26,chocolate marshmallow,6,10,6
+27,salty snack,6,10,7
+28,chewing gum,6,10,8
+29,flour,7,10,9
+30,mustard,7,10,10
+31,dessert,7,10,11
+32,herbs,7,10,7
+33,salt,8,10,8
+34,coffee,8,10,9
+35,cling film/bags,8,10,10
+36,shopping bags,8,10,11
+37,berries,9,10,12
+38,root vegetables,9,10,7
+39,onions,9,10,7
+40,pickled vegetables,9,10,8
+41,dish cleaner,10,10,9
+42,detergent,10,10,10
+43,cat food,10,10,11
+44,dog food,10,10,6
+45,pet care,11,10,7
+46,bottled beer,11,10,8
+47,canned beer,11,10,9
+48,liquor,11,10,10

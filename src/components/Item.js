@@ -4,7 +4,7 @@ export const Item = ({ item, delProd, addCartProd }) => {
   const name = item.name;
   const nos = item.amount;
   const price = item.price;
-  const prefix = "Rs.";
+  const prefix = "$";
   const isCartItem = item.isCartItem;
   const addtoCart = (item) => {
     item.isCartItem = true;
@@ -19,9 +19,6 @@ export const Item = ({ item, delProd, addCartProd }) => {
         isCartItem ? (
           <div>
              <span>
-          {Math.abs(nos)}
-        {/* </span>
-        <span> */}
           {prefix}
           {Math.abs(price)}
         </span>

@@ -1,12 +1,8 @@
 import * as React from "react";
-import { useState, useContext, Component } from "react";
 import { matchPath } from "react-router";
 import { db } from "./config";
 import firestore from "firebase";
 import "./Graph.js";
-import {graph} from "./globvar.js" 
-// import GlobalState from "./contexts/GlobalState";
-// const { graph, setthegraph } = useContext(GlobalState);
 const list = [];
 const dict1 = {};
 const list2 = [];
@@ -33,6 +29,8 @@ class Map extends React.Component {
     };
   }
   componentDidMount() {
+    // console.log(graph);
+    // console.log("hello");
     // db.ref('/users').on('value', querySnapShot => {
     //     let data = querySnapShot.val() ? querySnapShot.val() : {};
     //     let todoItems = data;

@@ -1,10 +1,7 @@
 import * as React from "react";
-import { useState, useContext, Component } from "react";
 import { matchPath } from "react-router";
 import { db } from "./config";
-// import GlobalState from "./contexts/GlobalState";
-// const { graph, setthegraph } = useContext(GlobalState);
-import {graph} from "./globvar.js" 
+
 class Graph extends React.Component {
   constructor(props) {
     super(props);
@@ -17,7 +14,7 @@ class Graph extends React.Component {
   }
   componentDidMount() {
     var shelf_list = {};
-    // var graph = {};
+    var graph = {};
     var nodes = {};
     shelf_list[1] = [297, 322];
     shelf_list[2] = [398, 322];
@@ -142,6 +139,7 @@ class Graph extends React.Component {
     this.setState({
       shelf_list1: shelf_list,
     });
+    console.log(this.state.shelf_list1);
     this.setState({
       nodes1: nodes,
     });
@@ -289,6 +287,8 @@ class Graph extends React.Component {
     var shortestPathInfo = this.shortestPath(e, 60, 1);
     var path1to6 = this.constructPath(shortestPathInfo, 51);
     console.log(path1to6);
+    // console.log("hello");
+    // console.log(graph);
   }
   dist_bet_nodes(x, y) {
     // return Math.sqrt((((Math.abs(x[0]-y[0])*(Math.abs(x[1]-y[1])) + (Math.abs(x[1]-y[1])*(Math.abs(x[1]-y[1])))))));
@@ -341,8 +341,13 @@ class Graph extends React.Component {
     return path;
   }
   render() {
-    return <div></div>;
+    return (
+      <div>
+        <Graph>graph = {this.graph}</Graph>
+      </div>
+    );
   }
+  
 }
 
 export default Graph;
