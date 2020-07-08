@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Grid, Typography } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
+import GlobalState from "../contexts/GlobalState";
 import ProductCard from "./ProductCard";
 
 const useStyles = makeStyles((theme) => ({
@@ -46,7 +47,15 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function ProductGrid() {
+  const { suggprods, data, addProd }= useContext(GlobalState);
+  const actdata=data.data
+  const tosenddata = []
+  console.log(actdata);
   const classes = useStyles();
+  const shortprod = suggprods.slice(0,6);
+  {shortprod.map((item) => (
+    tosenddata.push([...actdata.filter((prods) => prods.Product === item)][0])
+  ))}
   return (
     <Grid
       className={classes.productGrid}
@@ -57,9 +66,9 @@ function ProductGrid() {
       spacing={5}
     >
       <Grid item xs={12}>
-        <Typography align="center">Popular Products</Typography>
+        <Typography align="center">Recommended Products</Typography>
       </Grid>
-      <Grid item xs={12}>
+      {/* <Grid item xs={12}>
         <Grid container spacing={4}>
           <Grid item xs={4}>
             <ProductCard />
@@ -83,6 +92,25 @@ function ProductGrid() {
           <Grid item xs={4}>
             <ProductCard />
           </Grid>
+        </Grid>
+      </Grid> */}
+      {/* <ul className="list">
+        {suggprods.map((item) => (
+          <ProductCard
+            item={item}
+            price={10}
+          />
+        ))}
+      </ul> */}
+       <Grid item xs={12}>
+        <Grid container spacing={4}>
+        {tosenddata.map((item) => (
+          <ProductCard
+          item={item}
+          addProd={addProd}
+          />
+          // console.log(item)
+        ))}
         </Grid>
       </Grid>
     </Grid>

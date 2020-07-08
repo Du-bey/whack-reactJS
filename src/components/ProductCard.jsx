@@ -44,13 +44,27 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function ProductCard() {
+function ProductCard({item, addProd}) {
+  // const prod=item[0]
+  // console.log(item)
   const classes = useStyles();
+  const addnewItem = (e) => {
+    e.preventDefault();
+    const newProd = {
+      id: item.Id, 
+      name:item.Product,
+      price:item.Price,
+      isCartItem:false
+    };
+    addProd(newProd);
+    console.log(newProd);
+  };
   return (
-    <Paper className={classes.paper}>
+    <Grid item xs={4}>
+       <Paper className={classes.paper}>
       <Grid container spacing={2}>
         <Grid item>
-          <ButtonBase className={classes.image}>
+          <ButtonBase onClick={addnewItem} className={classes.image}>
             <img
               className={classes.img}
               alt="complex"
@@ -62,27 +76,17 @@ function ProductCard() {
           <Grid item xs container direction="column" spacing={2}>
             <Grid item xs>
               <Typography gutterBottom variant="subtitle1">
-                Standard license
-              </Typography>
-              <Typography variant="body2" gutterBottom>
-                Full resolution 1920x1080 • JPEG
-              </Typography>
-              <Typography variant="body2" color="textSecondary">
-                ID: 1030114
-              </Typography>
-            </Grid>
-            <Grid item>
-              <Typography variant="body2" style={{ cursor: "pointer" }}>
-                Remove
+                <h3>{item.Product}</h3>
               </Typography>
             </Grid>
           </Grid>
           <Grid item>
-            <Typography variant="subtitle1">$19.00</Typography>
+            <Typography variant="subtitle1">${item.Price}</Typography>
           </Grid>
         </Grid>
       </Grid>
     </Paper>
+    </Grid>
   );
 }
 
