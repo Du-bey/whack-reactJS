@@ -1,10 +1,7 @@
 import * as React from "react";
-import { useState, useContext, Component } from "react";
 import { matchPath } from "react-router";
 import { db } from "./config";
-// import GlobalState from "./contexts/GlobalState";
-// const { graph, setthegraph } = useContext(GlobalState);
-import {graph} from "./globvar.js" 
+
 class Graph extends React.Component {
   constructor(props) {
     super(props);
@@ -142,6 +139,7 @@ class Graph extends React.Component {
     this.setState({
       shelf_list1: shelf_list,
     });
+    console.log(this.state.shelf_list1);
     this.setState({
       nodes1: nodes,
     });
@@ -343,7 +341,11 @@ class Graph extends React.Component {
     return path;
   }
   render() {
-    return <div></div>;
+    return (
+      <div>
+        <Graph>graph = {this.graph}</Graph>
+      </div>
+    );
   }
   
 }
